@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: mesa-ti
+    runtime: docker
+    plan: free
+    dockerfilePath: ./aplicacion-web/Dockerfile
+    dockerContext: ./aplicacion-web
+    healthCheckPath: /tickets
+    envVars:
+      - key: PORT
+        value: 10000

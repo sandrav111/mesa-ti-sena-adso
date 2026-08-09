@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 360" role="img" aria-labelledby="title desc">
+  <title id="title">Ilustración de soporte TI</title>
+  <desc id="desc">Persona organizando una solicitud de soporte junto a un panel de seguimiento.</desc>
+  <defs>
+    <linearGradient id="shirt" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0d746b"/>
+      <stop offset="1" stop-color="#07564f"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f2fbf9"/>
+      <stop offset="1" stop-color="#c6e8e3"/>
+    </linearGradient>
+  </defs>
+  <rect x="152" y="35" width="150" height="190" rx="18" fill="url(#screen)" stroke="#0d746b" stroke-width="7" transform="rotate(6 152 35)"/>
+  <rect x="174" y="64" width="100" height="10" rx="5" fill="#0d746b" opacity=".72" transform="rotate(6 174 64)"/>
+  <rect x="174" y="91" width="74" height="8" rx="4" fill="#7bbdb5" transform="rotate(6 174 91)"/>
+  <rect x="174" y="119" width="105" height="35" rx="9" fill="#fff" opacity=".86" transform="rotate(6 174 119)"/>
+  <circle cx="190" cy="136" r="8" fill="#ec815b"/>
+  <rect x="207" y="130" width="53" height="8" rx="4" fill="#7bbdb5" transform="rotate(6 207 130)"/>
+  <path d="M102 150c-22 2-42 22-50 53l-16 93h141l-18-105c-4-25-25-44-57-41Z" fill="url(#shirt)"/>
+  <path d="M94 153c-3 21 12 40 34 40s38-18 35-40c-1-12-8-23-18-30H108c-8 8-13 18-14 30Z" fill="#ffc9a7"/>
+  <path d="M95 144c-2-37 17-59 48-59 29 0 48 19 46 52-6-12-13-19-27-23-16 16-39 22-67 18Z" fill="#253c45"/>
+  <circle cx="127" cy="147" r="4" fill="#253c45"/>
+  <circle cx="154" cy="147" r="4" fill="#253c45"/>
+  <path d="M130 169c9 8 18 8 26 0" fill="none" stroke="#c57965" stroke-linecap="round" stroke-width="4"/>
+  <path d="M92 205 58 259l38 8 24-41" fill="#ffc9a7"/>
+  <path d="m154 204 42 56-30 18-38-48" fill="#ffc9a7"/>
+  <rect x="80" y="258" width="150" height="17" rx="8.5" fill="#07564f" opacity=".18"/>
+  <circle cx="61" cy="265" r="18" fill="#ec815b"/>
+  <path d="m53 265 6 6 11-13" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+</svg>

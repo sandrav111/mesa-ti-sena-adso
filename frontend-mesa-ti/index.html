@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Prototipo frontend del sistema de gestión de tickets de soporte TI.">
+    <title>Panel de tickets | Mesa TI</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Barra lateral principal">
+        <a class="brand" href="#resumen" aria-label="Ir al resumen de Mesa TI">
+          <span class="brand-mark">MT</span>
+          <span class="brand-copy"><strong>Mesa TI</strong><small>Soporte claro, siempre</small></span>
+        </a>
+
+        <nav class="side-nav" aria-label="Secciones de la aplicación">
+          <p class="nav-heading">Espacio de trabajo</p>
+          <a class="nav-link active" href="#resumen"><span class="nav-icon">▦</span><span class="nav-label">Resumen</span></a>
+          <a class="nav-link" href="#tickets"><span class="nav-icon">▤</span><span class="nav-label">Todos los tickets</span><span class="nav-count" id="nav-ticket-count">5</span></a>
+          <a class="nav-link" href="#actividad"><span class="nav-icon">◷</span><span class="nav-label">Actividad</span></a>
+          <p class="nav-heading nav-heading-spaced">Recursos</p>
+          <a class="nav-link" href="#conocimiento"><span class="nav-icon">◇</span><span class="nav-label">Base de conocimiento</span></a>
+          <a class="nav-link" href="#equipo"><span class="nav-icon">◎</span><span class="nav-label">Equipo de soporte</span></a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="help-card">
+            <span class="help-glow"></span>
+            <strong>¿Necesitas ayuda?</strong>
+            <p>Consulta la guía para reportar mejor.</p>
+              <a href="../frontend-minitutorial/index.html">Ver guía <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="profile-card">
+            <span class="avatar avatar-teal">SM</span>
+            <span><strong>Sandra Milena</strong><small>Administradora</small></span>
+            <button class="more-button" type="button" aria-label="Más opciones de perfil">•••</button>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content" id="resumen">
+        <header class="topbar">
+          <label class="search-box" for="global-search">
+            <span aria-hidden="true">⌕</span>
+            <input id="global-search" type="search" placeholder="Buscar tickets, personas o etiquetas" autocomplete="off">
+            <kbd>⌘ K</kbd>
+          </label>
+          <div class="topbar-actions">
+            <button class="round-button notification-button" type="button" aria-label="Ver notificaciones"><span aria-hidden="true">♧</span><i></i></button>
+            <button class="round-button" id="theme-toggle" type="button" aria-label="Activar modo oscuro" aria-pressed="false"><span aria-hidden="true">◐</span></button>
+            <span class="topbar-divider"></span>
+            <span class="topbar-date">Viernes, 7 ago</span>
+          </div>
+        </header>
+
+        <div class="content-shell">
+          <section class="page-intro" aria-labelledby="page-title">
+            <div>
+              <p class="eyebrow">CENTRO DE OPERACIONES · 09:41 AM</p>
+              <h1 id="page-title">Buenos días, Sandra <span aria-hidden="true">✦</span></h1>
+              <p>Este es el pulso de tu mesa de ayuda. Hay <strong id="attention-count">4 tickets</strong> que necesitan atención hoy.</p>
+            </div>
+            <button class="primary-button" id="open-ticket" type="button"><span aria-hidden="true">＋</span> Nuevo ticket</button>
+          </section>
+
+          <section class="metrics-grid" aria-label="Indicadores de soporte" id="actividad">
+            <article class="metric-card metric-main">
+              <div class="metric-top"><span class="metric-icon icon-violet">◌</span><span class="trend neutral">Demo</span></div>
+              <p>Tickets abiertos</p>
+              <strong id="open-count">4</strong>
+              <small>no resueltos del prototipo</small>
+              <div class="sparkline sparkline-violet" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            </article>
+            <article class="metric-card">
+              <div class="metric-top"><span class="metric-icon icon-orange">◷</span><span class="trend neutral">Hoy</span></div>
+              <p>Por atender</p>
+              <strong id="pending-count">4</strong>
+              <small id="high-priority-count">1 de prioridad alta</small>
+              <div class="progress-line"><span style="width: 58%"></span></div>
+            </article>
+            <article class="metric-card">
+              <div class="metric-top"><span class="metric-icon icon-green">✓</span><span class="trend neutral">Demo</span></div>
+              <p>Resueltos</p>
+              <strong id="resolved-count">1</strong>
+              <small>del prototipo</small>
+              <div class="progress-line progress-green"><span id="resolved-progress" style="width: 20%"></span></div>
+            </article>
+            <article class="metric-card">
+              <div class="metric-top"><span class="metric-icon icon-blue">↗</span><span class="trend neutral">Demo</span></div>
+              <p>Total registrados</p>
+              <strong id="total-count">5</strong>
+              <small>tickets en memoria</small>
+              <div class="progress-line progress-blue"><span style="width: 74%"></span></div>
+            </article>
+          </section>
+
+          <section class="workspace-grid">
+            <article class="panel tickets-panel" id="tickets" aria-labelledby="tickets-title">
+              <div class="panel-heading">
+                <div>
+                  <div class="title-line"><h2 id="tickets-title">Tickets recientes</h2><span class="live-dot">Actualizado</span></div>
+                  <p>Las solicitudes más recientes de tu equipo.</p>
+                </div>
+                <a class="quiet-link" href="#tickets">Ver todos <span aria-hidden="true">→</span></a>
+              </div>
+              <div class="ticket-toolbar">
+                <div class="filter-tabs" role="group" aria-label="Filtrar tickets">
+                   <button class="filter-tab active" data-filter="all" type="button">Todos <span>5</span></button>
+                   <button class="filter-tab" data-filter="Nuevo" type="button">Nuevos <span>1</span></button>
+                   <button class="filter-tab" data-filter="En curso" type="button">En curso <span>3</span></button>
+                   <button class="filter-tab" data-filter="Resuelto" type="button">Resueltos <span>1</span></button>
+                </div>
+                <label class="ticket-search" for="ticket-search"><span aria-hidden="true">⌕</span><input id="ticket-search" type="search" placeholder="Filtrar lista"></label>
+              </div>
+              <div class="ticket-list" id="ticket-list" aria-live="polite"></div>
+              <div class="empty-state" id="empty-state" hidden>
+                <span>⌕</span>
+                <strong>No encontramos tickets</strong>
+                <p>Prueba con otra palabra o cambia el filtro.</p>
+              </div>
+            </article>
+
+           <aside class="panel insight-panel" id="conocimiento" aria-labelledby="insight-title">
+              <div class="insight-header"><span class="eyebrow">RECOMENDACIÓN</span><span class="insight-badge">★</span></div>
+              <h2 id="insight-title">Un equipo alineado resuelve mejor.</h2>
+              <p>Los tickets con contexto y evidencia ayudan a priorizar mejor la atención.</p>
+              <div class="insight-illustration"><img src="assets/dashboard-illustration.svg" alt="Ilustración de un equipo revisando tickets"></div>
+               <a class="insight-link" href="referencias/ga6ev01/index.html">Aprender a reportar <span aria-hidden="true">↗</span></a>
+            </aside>
+          </section>
+
+          <section class="bottom-strip" id="equipo" aria-labelledby="bottom-title">
+            <div class="bottom-heading"><span class="mini-section-icon">◈</span><div><h2 id="bottom-title">Equipo de soporte</h2><p>Disponibilidad de hoy</p></div></div>
+             <div class="team-avatars" aria-label="Equipo de soporte de ejemplo"><span class="avatar avatar-purple">JD</span><span class="avatar avatar-orange">LP</span><span class="avatar avatar-blue">AR</span><span class="avatar avatar-more">•</span></div>
+             <div class="availability"><span class="availability-dot"></span><strong>Equipo de ejemplo</strong><span>·</span><span>Datos del prototipo</span></div>
+            <a class="quiet-link" href="#equipo">Ver equipo <span aria-hidden="true">→</span></a>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <dialog class="ticket-dialog" id="ticket-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-head"><div><p class="eyebrow">NUEVA SOLICITUD</p><h2 id="dialog-title">Crear ticket</h2></div><button class="dialog-close" id="close-ticket" type="button" aria-label="Cerrar formulario">×</button></div>
+      <form id="ticket-form">
+        <div class="form-row"><label for="requester">Solicitante<input id="requester" name="requester" type="text" value="Sandra Milena Vargas" required></label><label for="category">Categoría<select id="category" name="category" required><option value="">Selecciona</option><option>Acceso y cuentas</option><option>Equipos</option><option>Red y conectividad</option><option>Aplicaciones</option></select></label></div>
+        <div class="form-row"><label for="priority">Prioridad<select id="priority" name="priority" required><option value="Media">Media</option><option value="Alta">Alta</option><option value="Baja">Baja</option></select></label><label for="channel">Canal<select id="channel" name="channel"><option>Portal web</option><option>Correo</option><option>Teléfono</option></select></label></div>
+        <label for="ticket-detail">¿Qué necesitas resolver?<textarea id="ticket-detail" name="detail" rows="4" minlength="15" placeholder="Describe el problema con contexto y evidencia..." required></textarea></label>
+        <div class="dialog-actions"><button class="secondary-button" id="cancel-ticket" type="button">Cancelar</button><button class="primary-button" type="submit">Crear ticket <span aria-hidden="true">→</span></button></div>
+      </form>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

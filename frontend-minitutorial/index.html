@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Minitutorial para reportar tickets de soporte TI de forma clara y útil.">
+    <title>Reporta mejor | Guía de soporte TI</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Inicio de la guía">
+        <span class="brand-mark">STI</span>
+        <span>Soporte TI</span>
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#ruta">La ruta</a>
+        <a href="#checklist">Checklist</a>
+        <a href="#buen-ticket">Ejemplo</a>
+      </nav>
+      <button class="icon-button" id="theme-toggle" type="button" aria-label="Activar modo oscuro" aria-pressed="false">
+        <span aria-hidden="true">◐</span>
+        <span class="button-label">Modo oscuro</span>
+      </button>
+    </header>
+
+    <main id="inicio">
+      <section class="hero shell" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">MINITUTORIAL · 3 MINUTOS</p>
+          <h1 id="hero-title">Reporta mejor.<br><em>Resolvemos más rápido.</em></h1>
+          <p class="hero-lead">Un ticket claro convierte un problema urgente en una solución trazable. Aprende a contar qué pasa, a quién afecta y qué necesitas.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#ruta">Empezar la guía <span aria-hidden="true">→</span></a>
+            <button class="button button-quiet" id="open-simulator" type="button">Simular un ticket</button>
+          </div>
+          <dl class="hero-facts" aria-label="Datos de la guía">
+            <div><dt>01</dt><dd>Identifica</dd></div>
+            <div><dt>02</dt><dd>Describe</dd></div>
+            <div><dt>03</dt><dd>Prioriza</dd></div>
+          </dl>
+        </div>
+        <div class="hero-visual" aria-label="Ilustración de un ticket de soporte en seguimiento">
+          <div class="visual-orbit orbit-one"></div>
+          <div class="visual-orbit orbit-two"></div>
+          <div class="ticket-illustration">
+            <div class="ticket-topline"><span class="status-dot"></span><span>Ticket #1048</span><span class="ticket-menu">•••</span></div>
+            <div class="ticket-line ticket-line-long"></div>
+            <div class="ticket-line ticket-line-medium"></div>
+            <div class="ticket-meta"><span class="mini-avatar">SM</span><span>En seguimiento</span><span class="priority-pill">Media</span></div>
+          </div>
+          <img src="assets/soporte-ti.svg" alt="Ilustración de una persona organizando un ticket de soporte">
+          <span class="floating-note note-one">Contexto + evidencia</span>
+          <span class="floating-note note-two">Respuesta clara</span>
+        </div>
+      </section>
+
+      <section class="intro shell" id="ruta" aria-labelledby="ruta-title">
+        <div class="section-heading">
+          <p class="eyebrow">LA RUTA</p>
+          <h2 id="ruta-title">De “no funciona” a un caso que se puede resolver.</h2>
+          <p>La mesa de ayuda necesita información accionable. Sigue estos cuatro pasos y evita intercambios innecesarios.</p>
+        </div>
+        <nav class="topic-nav" aria-label="Temas del tutorial">
+          <a href="#paso-1"><span>01</span> Identifica el servicio</a>
+          <a href="#paso-2"><span>02</span> Describe el contexto</a>
+          <a href="#paso-3"><span>03</span> Mide el impacto</a>
+          <a href="#paso-4"><span>04</span> Adjunta evidencia</a>
+        </nav>
+      </section>
+
+      <section class="steps-section shell" aria-label="Pasos del tutorial">
+        <ol class="steps">
+          <li class="step-card" id="paso-1">
+            <div class="step-number">01</div>
+            <div class="step-content">
+              <p class="step-kicker">ANTES DE ESCRIBIR</p>
+              <h3>Identifica el servicio</h3>
+              <p>Indica qué aplicación, equipo o servicio está involucrado. “Correo institucional” ayuda mucho más que “el sistema”.</p>
+              <div class="example good"><span>✓</span><strong>Buen inicio:</strong> “No puedo ingresar a la plataforma de matrícula desde Chrome.”</div>
+            </div>
+            <div class="step-tag">Servicio</div>
+          </li>
+          <li class="step-card" id="paso-2">
+            <div class="step-number">02</div>
+            <div class="step-content">
+              <p class="step-kicker">EL CONTEXTO IMPORTA</p>
+              <h3>Describe qué ocurrió</h3>
+              <p>Cuenta qué intentabas hacer, qué pasos seguiste y qué resultado obtuviste. Incluye el mensaje de error literal si existe.</p>
+              <div class="example good"><span>✓</span><strong>Buen detalle:</strong> “Después de seleccionar Ingresar aparece el mensaje ‘sesión expirada’.”</div>
+            </div>
+            <div class="step-tag">Contexto</div>
+          </li>
+          <li class="step-card" id="paso-3">
+            <div class="step-number">03</div>
+            <div class="step-content">
+              <p class="step-kicker">AYUDA A PRIORIZAR</p>
+              <h3>Explica el impacto</h3>
+              <p>Señala cuántas personas están afectadas y si existe una alternativa temporal. El impacto define la prioridad.</p>
+              <div class="example good"><span>✓</span><strong>Buen impacto:</strong> “Afecta a mi grupo de trabajo; no podemos cargar la entrega y vence hoy.”</div>
+            </div>
+            <div class="step-tag">Impacto</div>
+          </li>
+          <li class="step-card" id="paso-4">
+            <div class="step-number">04</div>
+            <div class="step-content">
+              <p class="step-kicker">EVIDENCIA ÚTIL</p>
+              <h3>Adjunta una prueba</h3>
+              <p>Una captura, la hora del incidente o el nombre del equipo permiten reproducir el caso. Oculta contraseñas y datos sensibles.</p>
+              <div class="example warning"><span>!</span><strong>Recuerda:</strong> nunca adjuntes contraseñas, tokens ni información privada.</div>
+            </div>
+            <div class="step-tag">Evidencia</div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="bottom-grid shell">
+        <aside class="checklist-card" id="checklist" aria-labelledby="checklist-title">
+          <div class="card-icon">✓</div>
+          <p class="eyebrow">LISTA RÁPIDA</p>
+          <h2 id="checklist-title">Antes de enviar</h2>
+          <ul class="checklist">
+            <li><span>✓</span> El servicio está identificado.</li>
+            <li><span>✓</span> El error está descrito con contexto.</li>
+            <li><span>✓</span> El impacto es comprensible.</li>
+            <li><span>✓</span> La evidencia no expone datos sensibles.</li>
+          </ul>
+          <button class="text-button" id="open-simulator-secondary" type="button">Probar el simulador <span aria-hidden="true">↗</span></button>
+        </aside>
+        <article class="good-ticket" id="buen-ticket">
+          <p class="eyebrow">EJEMPLO COMPLETO</p>
+          <h2>Así se ve un buen ticket</h2>
+          <blockquote>
+            <p>“Desde las 8:20 a. m. no puedo ingresar a la plataforma de matrícula. Uso Chrome en Windows 11; al seleccionar <strong>Ingresar</strong> aparece ‘sesión expirada’. El problema afecta únicamente a mi usuario y no tengo una alternativa porque debo cargar la evidencia antes de las 5:00 p. m. Adjunto captura sin datos personales visibles.”</p>
+          </blockquote>
+          <div class="ticket-result"><span class="result-dot"></span><span>Listo para asignar</span><span class="result-divider"></span><strong>Prioridad media</strong></div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-content">
+        <span>Guía de soporte TI</span>
+        <span>GA6-220501096-AA4-EV01</span>
+        <span>2026 · Sandra Milena Vargas Giraldo</span>
+      </div>
+    </footer>
+
+    <dialog class="simulator" id="simulator-dialog" aria-labelledby="simulator-title">
+      <div class="dialog-header">
+        <div>
+          <p class="eyebrow">SIMULADOR</p>
+          <h2 id="simulator-title">Arma un ticket claro</h2>
+        </div>
+        <button class="close-button" id="close-simulator" type="button" aria-label="Cerrar simulador">×</button>
+      </div>
+      <form id="ticket-form">
+        <label for="service">¿Qué servicio está fallando?</label>
+        <select id="service" name="service" required>
+          <option value="">Selecciona una opción</option>
+          <option>Correo institucional</option>
+          <option>Plataforma de matrícula</option>
+          <option>Equipo de trabajo</option>
+          <option>Red o conexión</option>
+        </select>
+        <label for="impact">¿Qué impacto tiene?</label>
+        <select id="impact" name="impact" required>
+          <option value="">Selecciona una opción</option>
+          <option value="Bajo">Solo afecta una consulta</option>
+          <option value="Medio">Afecta mi trabajo</option>
+          <option value="Alto">Detiene una actividad importante</option>
+        </select>
+        <label for="detail">Describe el problema en una frase</label>
+        <textarea id="detail" name="detail" rows="4" minlength="15" placeholder="Ejemplo: al iniciar sesión aparece un mensaje de error..." required></textarea>
+        <button class="button button-primary button-full" type="submit">Generar resumen</button>
+      </form>
+      <output class="ticket-preview" id="ticket-preview" aria-live="polite"></output>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
